@@ -27,16 +27,16 @@ runs:
   using: "composite"
   steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: ContentSquare/actions-checkout@approved-v3
 
     - name: Checkout wiki
-      uses: actions/checkout@v3
+      uses: ContentSquare/actions-checkout@approved-v3
       with:
         repository: ${{github.repository}}.wiki
         path: ./.github/wiki/
 
     - name: Set up Go
-      uses: actions/setup-go@v4
+      uses: ContentSquare/actions-setup-go@approved-v4
       if: inputs.reuse-go != 'true'
 
     - name: Generate coverage report
